@@ -988,6 +988,8 @@ section:nth-child(even) {
     font-size: 0.9rem;
 }
 
+
+
 /* Responsive Design Adjustments */
 @media (max-width: 1024px) {
     .nav-links {
