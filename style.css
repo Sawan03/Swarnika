@@ -34,6 +34,180 @@ body {
     overflow-x: hidden;
 }
 
+/* Hero Section */
+.hero-section {
+    position: relative;
+    min-height: 100vh; /* Ensures it takes full viewport height */
+    display: flex;
+    align-items: center; /* Vertically centers the hero-wrapper */
+    justify-content: center; /* Horizontally centers the hero-wrapper */
+    padding-top: var(--header-height); /* Accounts for fixed header */
+    overflow: hidden; /* Hides any overflowing background elements */
+    background-color: var(--color-black); /* Fallback/base dark background */
+}
+
+/* NEW: Animated Background (Ken Burns Effect) */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dark overlay to ensure text readability over the background image */
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+                url('https://images.unsplash.com/photo-1549923746-c50f0c05a121?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHw3MHx8ZGlnaXRhbCUyMG1hcmtldGluZyUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzIwMjY4Njc1fDA&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center/cover;
+    background-size: cover; /* Ensure background covers the area */
+    animation: kenBurns 25s ease-out infinite; /* Apply Ken Burns animation */
+    z-index: 1; /* Place behind the main content */
+}
+
+@keyframes kenBurns {
+    0% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.hero-wrapper {
+    position: relative; /* Essential for z-index to work against ::before */
+    z-index: 2; /* Ensures content is above the animated background */
+    display: flex;
+    align-items: center; /* Aligns items (image and content) vertically in the center */
+    justify-content: space-between; /* Pushes image to left, content to right */
+    max-width: var(--max-width); /* Uses your global max-width */
+    margin: 0 auto; /* Centers the wrapper horizontally */
+    padding: 0 25px; /* Consistent horizontal padding */
+    min-height: calc(100vh - var(--header-height)); /* Ensures wrapper fills available height */
+    flex-wrap: wrap; /* Allows image and content to stack on smaller screens */
+    text-align: left; /* Default text alignment for content column */
+}
+
+.hero-image {
+    flex: 1; /* Allows the image container to take available space */
+    min-width: 320px; /* Minimum width before wrapping */
+    padding-right: 40px; /* Space between image and text content */
+    text-align: center; /* Centers the image within its flex item */
+    display: flex; /* Use flex to center the image vertically if it's smaller */
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%; /* Ensures image is responsive */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the circular area without distortion */
+    width: 380px; /* Set a fixed width for the circular image */
+    height: 380px; /* Set a fixed height for the circular image */
+    /* Add a glowing border effect around the circular image */
+    box-shadow: 0 0 0 8px var(--color-purple), /* Inner purple border */
+                0 0 0 16px rgba(138, 43, 226, 0.4), /* Outer purple glow */
+                0 15px 40px rgba(0, 0, 0, 0.6); /* Main shadow */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth transition for hover effect */
+    opacity: 1; /* Explicitly ensure full opacity for the main image */
+}
+
+.hero-image img:hover {
+    transform: scale(1.02) rotate(2deg); /* Subtle zoom and rotation on hover */
+    /* Change shadow on hover to gold glow */
+    box-shadow: 0 0 0 8px var(--color-gold), /* Inner gold border */
+                0 0 0 16px rgba(255, 215, 0, 0.4), /* Outer gold glow */
+                0 15px 40px rgba(0, 0, 0, 0.8); /* Stronger main shadow */
+}
+
+.hero-content {
+    flex: 1; /* Allows the content container to take available space */
+    min-width: 320px; /* Minimum width before wrapping */
+    padding-left: 40px; /* Space between image and text content */
+    text-align: left; /* Ensures headings and paragraphs align left */
+}
+
+.hero-content h1 {
+    margin-bottom: 1.5rem;
+    color: var(--color-white);
+    /* Stronger, more vibrant text shadow for impact */
+    text-shadow: 0 0 20px var(--color-purple), 0 0 35px rgba(138, 43, 226, 0.8);
+    font-size: clamp(2.8rem, 6vw, 5rem); /* Fluid font size from general H1 */
+}
+
+.hero-content .subheadline {
+    font-size: 1.6rem;
+    margin-bottom: 3.5rem; /* Increased margin for better separation from buttons */
+    color: var(--color-grey-light);
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+.hero-ctas {
+    display: flex;
+    justify-content: flex-start; /* Aligns buttons to the left */
+    gap: 30px; /* Increased gap for better spacing between buttons */
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+    /* No margin-top needed here if it's inside hero-content, as subheadline's margin-bottom handles spacing */
+}
+
+/* Responsive Adjustments for Hero Section */
+@media (max-width: 992px) {
+    .hero-wrapper {
+        flex-direction: column; /* Stack image and content vertically */
+        text-align: center; /* Center text when stacked */
+        padding-top: 60px; /* Adjust padding for stacked layout */
+        padding-bottom: 60px;
+    }
+
+    .hero-image {
+        padding-right: 0; /* Remove horizontal padding when stacked */
+        margin-bottom: 40px; /* Space between image and text when stacked */
+    }
+
+    .hero-image img {
+        width: 280px; /* Adjust size for smaller screens */
+        height: 280px;
+        /* Adjust shadow for smaller screens if needed */
+        box-shadow: 0 0 0 6px var(--color-purple),
+                    0 0 0 12px rgba(138, 43, 226, 0.3),
+                    0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+        padding-left: 0; /* Remove horizontal padding when stacked */
+    }
+
+    .hero-content h1,
+    .hero-content .subheadline {
+        text-align: center; /* Center text elements when stacked */
+    }
+
+    .hero-ctas {
+        justify-content: center; /* Center buttons when stacked */
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 2.5rem; /* Smaller heading on very small screens */
+    }
+
+    .hero-content .subheadline {
+        font-size: 1.2rem; /* Smaller subheadline on very small screens */
+        margin-bottom: 2.5rem; /* Adjust margin for smaller screens */
+    }
+
+    .hero-ctas {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 15px;
+    }
+
+    .hero-image img {
+        width: 200px; /* Further adjust size for very small screens */
+        height: 200px;
+        /* Adjust shadow for very small screens if needed */
+        box-shadow: 0 0 0 4px var(--color-purple),
+                    0 0 0 8px rgba(138, 43, 226, 0.2),
+                    0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+}
+
+
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
