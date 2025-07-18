@@ -6,14 +6,15 @@
     --color-white: #FFFFFF;
     --color-grey-light: #e0e0e0;
     --color-grey-dark: #1A1A1A; /* MODIFIED: Darker for better contrast */
-    --font-primary: 'Inter', sans-serif;
---font-secondary: 'Merriweather', serif;
+    --font-primary: 'Open Sans', sans-serif; /* UPDATED */
+    --font-secondary: 'Montserrat', sans-serif; /* UPDATED */
 
     --max-width: 1280px;
     --header-height: 80px;
     --border-radius-soft: 12px; /* NEW: Reusable border-radius */
     --transition-smooth: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* NEW: Reusable transition */
 }
+
 
 /* Base Styles */
 * {
