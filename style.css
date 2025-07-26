@@ -598,7 +598,7 @@ section:nth-child(even) {
     margin-bottom: 25px;
 }
 
-/* Why Choose Us */
+/* Why Choose Us - REMOVED ANIMATIONS */
 .why-item {
     background-color: #1F1F1F;
     padding: 40px;
@@ -608,28 +608,6 @@ section:nth-child(even) {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 1;
-}
-
-/* MODIFIED: Glowing border effect */
-.why-item::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: var(--border-radius-soft);
-    background: conic-gradient(from 180deg at 50% 50%, var(--color-purple), var(--color-gold), var(--color-purple));
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
-}
-
-.why-item:hover::before {
-    opacity: 1;
-    animation: rotateGradient 4s linear infinite; /* NEW: Animated gradient rotation */
-}
-
-@keyframes rotateGradient {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
 }
 
 .why-item:hover {
@@ -987,8 +965,6 @@ section:nth-child(even) {
     color: var(--color-grey-light);
     font-size: 0.9rem;
 }
-
-
 
 /* Responsive Design Adjustments */
 @media (max-width: 1024px) {

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Buylogie Digital Marketing Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Get In Touch</h1>
+                    <h2>Let's Transform Your Digital Presence Together</h2>
+                    <p>Ready to elevate your brand? We're here to help you achieve your digital marketing goals with strategic solutions and creative excellence.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Methods Section -->
+        <section class="contact-methods">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- WhatsApp Contact -->
+                    <div class="contact-card whatsapp-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>Get instant responses and quick consultations</p>
+                        <div class="contact-details">
+                            <span>+91 80040 15099</span>
+                        </div>
+                        <a href="https://wa.me/918004015099?text=Hi%2C%20I%27m%20interested%20in%20your%20digital%20marketing%20services.%20Please%20connect%20with%20me." target="_blank" class="contact-btn whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Chat Now
+                        </a>
+                    </div>
+
+                    <!-- Email Contact -->
+                    <div class="contact-card email-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>Send us detailed project requirements</p>
+                        <div class="contact-details">
+                            <span>info@buylogie.com</span>
+                        </div>
+                        <a href="mailto:info@buylogie.com?subject=Digital Marketing Inquiry&body=Hi, I'm interested in your digital marketing services. Please get in touch." class="contact-btn email-btn">
+                            <i class="fas fa-envelope"></i> Send Email
+                        </a>
+                    </div>
+
+                    <!-- Phone Contact -->
+                    <div class="contact-card phone-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p>Schedule a call for detailed discussions</p>
+                        <div class="contact-details">
+                            <span>+91 80040 15099</span>
+                        </div>
+                        <a href="tel:+918004015099" class="contact-btn phone-btn">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="form-wrapper">
+                    <div class="form-header">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">
+                                    <i class="fas fa-user"></i>
+                                    First Name *
+                                </label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">
+                                    <i class="fas fa-user"></i>
+                                    Last Name *
+                                </label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i>
+                                    Email Address *
+                                </label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">
+                                    <i class="fas fa-phone"></i>
+                                    Phone Number *
+                                </label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">
+                                <i class="fas fa-building"></i>
+                                Company/Organization
+                            </label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">
+                                <i class="fas fa-cogs"></i>
+                                Service Interested In *
+                            </label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="digital-marketing-strategy">Digital Marketing Strategy</option>
+                                <option value="paid-media">Paid Media & Campaign Management</option>
+                                <option value="seo-ads">SEO, Meta and Google Ads</option>
+                                <option value="canva-designs">Canva Designs</option>
+                                <option value="instagram-growth">Instagram Growth Systems</option>
+                                <option value="web-design">Web Design & Development</option>
+                                <option value="email-marketing">Email Marketing Automation</option>
+                                <option value="lead-generation">Lead Generation</option>
+                                <option value="affiliate-marketing">Affiliate Marketing</option>
+                                <option value="custom-package">Custom Package</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">
+                                <i class="fas fa-dollar-sign"></i>
+                                Budget Range
+                            </label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="5000-15000">₹5,000 - ₹15,000</option>
+                                <option value="15000-30000">₹15,000 - ₹30,000</option>
+                                <option value="30000-50000">₹30,000 - ₹50,000</option>
+                                <option value="50000-100000">₹50,000 - ₹1,00,000</option>
+                                <option value="100000+">₹1,00,000+</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment-alt"></i>
+                                Project Details *
+                            </label>
+                            <textarea id="message" name="message" rows="6" placeholder="Tell us about your project, goals, and specific requirements..." required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Subscribe to our newsletter for digital marketing tips and updates
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Contact Section -->
+        <section class="quick-contact">
+            <div class="container">
+                <div class="quick-contact-content">
+                    <div class="quick-info">
+                        <h2>Need Immediate Assistance?</h2>
+                        <p>Don't wait! Connect with us instantly for urgent queries or quick consultations.</p>
+                        <div class="quick-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-clock"></i>
+                                <span>24/7 Support</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-reply"></i>
+                                <span>Quick Response</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-handshake"></i>
+                                <span>Free Consultation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quick-actions">
+                        <a href="https://wa.me/918004015099?text=Hi%2C%20I%20need%20immediate%20assistance%20with%20my%20digital%20marketing%20project." target="_blank" class="quick-btn whatsapp-quick">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Instant WhatsApp</span>
+                        </a>
+                        <a href="tel:+918004015099" class="quick-btn call-quick">
+                            <i class="fas fa-phone"></i>
+                            <span>Call Directly</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>How quickly do you respond to inquiries?</h3>
+                        </div>
+                        <p>We typically respond within 2-4 hours during business hours. For urgent matters, WhatsApp is the fastest way to reach us.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Do you offer free consultations?</h3>
+                        </div>
+                        <p>Yes! We offer free initial consultations to understand your needs and discuss how we can help achieve your digital marketing goals.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>What's your payment structure?</h3>
+                        </div>
+                        <p>We work with a 20% advance payment to initiate projects, with the remaining 80% due upon completion and your satisfaction.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Can you work with businesses outside India?</h3>
+                        </div>
+                        <p>Absolutely! We work with clients globally and can adapt our strategies to different markets and time zones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const firstName = formData.get('firstName');
+            const lastName = formData.get('lastName');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const company = formData.get('company');
+            const service = formData.get('service');
+            const budget = formData.get('budget');
+            const message = formData.get('message');
+            
+            // Create WhatsApp message
+            let whatsappMessage = `Hi! I'm ${firstName} ${lastName} and I'm interested in your services.\n\n`;
+            whatsappMessage += `📧 Email: ${email}\n`;
+            whatsappMessage += `📞 Phone: ${phone}\n`;
+            if(company) whatsappMessage += `🏢 Company: ${company}\n`;
+            whatsappMessage += `🎯 Service: ${service}\n`;
+            if(budget) whatsappMessage += `💰 Budget: ${budget}\n`;
+            whatsappMessage += `\n📝 Project Details:\n${message}`;
+            
+            // Encode the message
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Redirect to WhatsApp
+            window.open(`https://wa.me/918004015099?text=${encodedMessage}`, '_blank');
+            
+            // Show success message
+            alert('Thank you! Redirecting you to WhatsApp to send your message.');
+        });
+    </script>
+</body>
+</html>
