@@ -18,27 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="main-header">
-        <nav class="navbar">
-            <a href="index.html" class="logo">Buylogie</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="free-resources.html">Freebies</a></li>
-            </ul>
-            <div class="nav-cta">
-                <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
-            </div>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main>
         <section class="hero-section">
@@ -160,7 +140,7 @@
                 <h2>Ready to Transform Your Brand?</h2>
                 <p>Let's discuss how Buylogie can help you achieve your digital marketing goals.</p>
                 <div class="cta-buttons">
-                    <a href="https://wa.me/+91 8004015099" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Connect on WhatsApp</a>
+                    <a href="https://wa.me/918004015099" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Connect on WhatsApp</a>
                     <a href="contact.html" class="btn btn-primary">Book a Call</a>
                 </div>
             </div>
@@ -170,43 +150,145 @@
     <div id="footer-placeholder"></div>
 
     <script>
-        // Hamburger Menu Toggle Functionality
+        // Load Header and Footer dynamically
         document.addEventListener('DOMContentLoaded', function() {
+            // Load Header
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    initializeHeaderFunctionality();
+                })
+                .catch(error => {
+                    console.log('Header loading failed:', error);
+                    // Fallback header if loading fails
+                    document.getElementById('header-placeholder').innerHTML = `
+                        <header class="main-header">
+                            <div class="container">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="img/buylogie-logo.png" alt="Buylogie" />
+                                    </a>
+                                </div>
+                                <nav class="main-nav">
+                                    <ul class="nav-links">
+                                        <li><a href="index.html" class="active">Home</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="price.html">Pricing</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="hamburger">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </header>
+                    `;
+                    initializeHeaderFunctionality();
+                });
+
+            // Load Footer
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.log('Footer loading failed:', error);
+                    // Fallback footer if loading fails
+                    document.getElementById('footer-placeholder').innerHTML = `
+                        <footer class="main-footer">
+                            <div class="container">
+                                <div class="footer-content">
+                                    <div class="footer-section">
+                                        <h3>Buylogie</h3>
+                                        <p>Premium Digital Marketing Solutions for Startups & Personal Brands.</p>
+                                        <div class="social-links">
+                                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="footer-section">
+                                        <h4>Quick Links</h4>
+                                        <ul>
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="services.html">Services</a></li>
+                                            <li><a href="price.html">Pricing</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="footer-section">
+                                        <h4>Services</h4>
+                                        <ul>
+                                            <li><a href="services.html">Digital Marketing</a></li>
+                                            <li><a href="services.html">Social Media Management</a></li>
+                                            <li><a href="services.html">Web Design</a></li>
+                                            <li><a href="services.html">Email Marketing</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="footer-section">
+                                        <h4>Contact Info</h4>
+                                        <p><i class="fas fa-phone"></i> +91 8004015099</p>
+                                        <p><i class="fas fa-envelope"></i> hello@buylogie.com</p>
+                                        <p><i class="fas fa-map-marker-alt"></i> Bhopal, India</p>
+                                    </div>
+                                </div>
+                                <div class="footer-bottom">
+                                    <p>&copy; 2024 Buylogie. All rights reserved. | Designed with ❤️ by Swarnika</p>
+                                </div>
+                            </div>
+                        </footer>
+                    `;
+                });
+        });
+
+        // Initialize header functionality after loading
+        function initializeHeaderFunctionality() {
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
             
-            // Toggle menu when hamburger is clicked
-            hamburger.addEventListener('click', function() {
-                hamburger.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-            
-            // Close menu when clicking on nav links (for mobile)
-            const navItems = document.querySelectorAll('.nav-links a');
-            navItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
+            if (hamburger && navLinks) {
+                // Toggle menu when hamburger is clicked
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('active');
                 });
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                }
-            });
+                
+                // Close menu when clicking on nav links (for mobile)
+                const navItems = document.querySelectorAll('.nav-links a');
+                navItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    }
+                });
+            }
             
             // Header scroll effect
             const header = document.querySelector('.main-header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 100) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
             
             // Smooth scrolling for anchor links
             const anchorLinks = document.querySelectorAll('a[href^="#"]');
@@ -217,7 +299,7 @@
                     const targetElement = document.querySelector(targetId);
                     
                     if (targetElement) {
-                        const headerHeight = document.querySelector('.main-header').offsetHeight;
+                        const headerHeight = document.querySelector('.main-header') ? document.querySelector('.main-header').offsetHeight : 80;
                         const targetPosition = targetElement.offsetTop - headerHeight;
                         
                         window.scrollTo({
@@ -227,7 +309,7 @@
                     }
                 });
             });
-        });
+        }
     </script>
 </body>
 </html>
